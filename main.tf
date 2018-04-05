@@ -1,3 +1,8 @@
+locals {
+  # Set the wait_for_elb_capacity to asg_min_capacity if not explicitly provided
+  asg_wait_for_elb_capacity = "${var.asg_wait_for_elb_capacity == "" ? var.asg_min_capacity : var.asg_wait_for_elb_capacity}"
+}
+
 resource "random_id" "lc_name" {
   # This is so that the name will be changed if any of these changes
   keepers = {
@@ -88,8 +93,8 @@ resource "aws_autoscaling_group" "main" {
   placement_group           = "${var.asg_placement_group}"
   metrics_granularity       = "${var.asg_metrics_granularity}"
   enabled_metrics           = "${var.asg_enabled_metrics}"
-  wait_for_capacity_timeout = "${var.asg_wait_timeout}"
-  wait_for_elb_capacity     = "${var.asg_min_capacity}"
+  wait_for_capacity_timeout = "${var.asg_wait_for_capacity_timeout}"
+  wait_for_elb_capacity     = "${local.asg_wait_for_elb_capacity}"
   service_linked_role_arn   = "${var.asg_service_linked_role_arn}"
 
   lifecycle {
