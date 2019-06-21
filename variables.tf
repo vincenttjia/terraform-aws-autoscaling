@@ -40,6 +40,12 @@ variable "asg_lb_target_group_arns" {
   description = "The created ASG will be attached to this target group"
 }
 
+variable "asg_clb_names" {
+  type        = "list"
+  default     = []
+  description = "A list of classic load balancer names to add to the autoscaling group"
+}
+
 variable "asg_min_capacity" {
   type        = "string"
   default     = "0"
