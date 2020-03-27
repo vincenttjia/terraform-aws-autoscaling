@@ -220,6 +220,11 @@ variable "delete_on_termination" {
   default     = "true"
 }
 
+variable "ebs_encryption" {
+  description = "Whether the volume will be encrypted or not"
+  default     = "false"
+}
+
 variable "associate_public_ip" {
   description = "Whether to associate public IP to the instance"
   default     = "false"

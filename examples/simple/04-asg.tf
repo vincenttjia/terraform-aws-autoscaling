@@ -1,6 +1,5 @@
 module "asg" {
   source = "../../"
-
   service_name        = "fprbe"
   environment         = "staging"
   product_domain      = "fpr"
