@@ -150,7 +150,10 @@ variable "launch_template_overrides" {
     },
   ]
 
-  description = "List of nested arguments provides the ability to specify multiple instance types. See https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#override"
+  description = <<EOT
+  List of nested arguments provides the ability to specify multiple instance types. See https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#override
+  When using plain launch template, the first element's instance_type will be used as the launch template instance type.
+  EOT
 }
 
 variable "security_groups" {
@@ -232,6 +235,12 @@ variable "ebs_encryption" {
 variable "associate_public_ip" {
   description = "Whether to associate public IP to the instance"
   default     = "false"
+}
+
+variable "use_mixed_instances_policy" {
+  type        = bool
+  description = "Whether to use ASG mixed instances policy or the plain launch template"
+  default     = true
 }
 
 variable "mixed_instances_distribution" {
