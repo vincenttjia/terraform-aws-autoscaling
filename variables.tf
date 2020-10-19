@@ -257,6 +257,12 @@ variable "mixed_instances_distribution" {
   }
 }
 
+variable "disable_api_termination" {
+  type        = bool
+  description = "whether to protect your instance from accidently being terminated from console or api"
+  default     = false
+} 
+
 variable "delete_network_interface_on_termination" {
   description = "Whether the network interface will be deleted on termination"
   default     = "true"
