@@ -7,15 +7,16 @@ data "aws_vpc" "staging" {
 }
 
 data "aws_subnet_ids" "app" {
-  vpc_id = "${data.aws_vpc.staging.id}"
+  vpc_id = data.aws_vpc.staging.id
 
   tags = {
     Tier = "app"
   }
+
 }
 
 data "template_file" "init" {
-  template = "${file("${path.module}/templates/init.tpl")}"
+  template = file("${path.module}/templates/init.tpl")
 }
 
 data "template_cloudinit_config" "config" {
@@ -25,6 +26,6 @@ data "template_cloudinit_config" "config" {
   part {
     filename     = "init.cfg"
     content_type = "text/cloud-config"
-    content      = "${data.template_file.init.rendered}"
+    content      = data.template_file.init.rendered
   }
 }

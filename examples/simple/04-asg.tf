@@ -7,10 +7,10 @@ module "asg" {
   application         = "java-8"
   associate_public_ip = "true"
 
-  security_groups       = ["${aws_security_group.fprbe-app.id}"]
-  instance_profile_name = "${module.instance_profile.instance_profile_name}"
+  security_groups       = [aws_security_group.fprbe-app.id]
+  instance_profile_name = module.instance_profile.instance_profile_name
 
-  image_owners = ["${data.aws_caller_identity.current.account_id}"]
+  image_owners = [data.aws_caller_identity.current.account_id]
 
   image_filters = [
     {
@@ -25,9 +25,10 @@ module "asg" {
     },
   ]
 
-  user_data = "${data.template_cloudinit_config.config.rendered}"
+  user_data = data.template_cloudinit_config.config.rendered
 
-  asg_vpc_zone_identifier  = ["${data.aws_subnet_ids.app.ids}"]
+  asg_vpc_zone_identifier = data.aws_subnet_ids.app.ids
+
   asg_lb_target_group_arns = []
 
   asg_wait_for_capacity_timeout = "1m"
