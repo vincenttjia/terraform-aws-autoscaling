@@ -1,6 +1,6 @@
 # terraform-aws-autoscaling
 
-[![Terraform Version](https://img.shields.io/badge/Terraform%20Version->=0.12.0,<0.12.31-blue.svg)](https://releases.hashicorp.com/terraform/)
+[![Terraform Version](https://img.shields.io/badge/Terraform%20Version->=0.13.0,<=0.13.7-blue.svg)](https://releases.hashicorp.com/terraform/)
 [![Release](https://img.shields.io/github/release/traveloka/terraform-aws-autoscaling.svg)](https://github.com/traveloka/terraform-aws-autoscaling/releases)
 [![Last Commit](https://img.shields.io/github/last-commit/traveloka/terraform-aws-autoscaling.svg)](https://github.com/traveloka/terraform-aws-autoscaling/commits/master)
 [![Issues](https://img.shields.io/github/issues/traveloka/terraform-aws-autoscaling.svg)](https://github.com/traveloka/terraform-aws-autoscaling/issues)
@@ -38,8 +38,9 @@ A terraform module which provisions an auto scaling group along with its launch 
 
 ## Dependencies
 
-This Terraform module have no dependencies to another modules
+This Terraform module uses another Terraform module, here is the list of Terraform module dependencies:
 
+* [traveloka/terraform-aws-resource-naming](https://github.com/traveloka/terraform-aws-resource-naming)
 
 ## Getting Started
 
@@ -95,8 +96,8 @@ module "asg" {
 
 ## Terraform Version
 
-This module was created on 15/8/2018.
-The latest stable version of Terraform which this module tested working is Terraform 0.12.31 on 28/09/2021.
+This module was created on 15/08/2018.
+The latest stable version of Terraform which this module tested working is Terraform 0.13.7 on 28/09/2021.
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
@@ -104,7 +105,7 @@ The latest stable version of Terraform which this module tested working is Terra
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 
 ## Providers
 
@@ -116,8 +117,8 @@ The latest stable version of Terraform which this module tested working is Terra
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_asg_name"></a> [asg\_name](#module\_asg\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.19.1 |
-| <a name="module_launch_template_name"></a> [launch\_template\_name](#module\_launch\_template\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.19.1 |
+| <a name="module_asg_name"></a> [asg\_name](#module\_asg\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.20.0 |
+| <a name="module_launch_template_name"></a> [launch\_template\_name](#module\_launch\_template\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.20.0 |
 
 ## Resources
 

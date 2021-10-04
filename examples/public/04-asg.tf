@@ -26,7 +26,8 @@ module "asg" {
 
   user_data = data.template_cloudinit_config.config.rendered
 
-  asg_vpc_zone_identifier  = data.aws_subnet_ids.app.ids
+  asg_vpc_zone_identifier = data.aws_subnet_ids.app.ids
+
   asg_lb_target_group_arns = []
 
   asg_wait_for_capacity_timeout = "1m"
