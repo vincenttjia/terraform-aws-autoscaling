@@ -58,6 +58,12 @@ variable "asg_max_capacity" {
   description = "The created ASG will have this number of instances at maximum"
 }
 
+variable "asg_desired_capacity" {
+  type        = string
+  default     = "2"
+  description = "The created ASG will have this number of instances at desired"
+}
+
 variable "asg_health_check_type" {
   type        = string
   default     = "ELB"
