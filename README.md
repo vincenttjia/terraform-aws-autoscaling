@@ -64,7 +64,7 @@ terraform apply
 switching to plain launch template
 ```hcl
 module "asg" {
-  source = "github.com/traveloka/terraform-aws-autoscaling?ref=v0.3.1"
+  source = "github.com/traveloka/terraform-aws-autoscaling?ref=v0.3.9"
   # ...
   use_mixed_instance_policy = false
   launch_template_overrides = [
@@ -82,7 +82,7 @@ module "asg" {
 switching to mixed instance policy
 ```hcl
 module "asg" {
-  source = "github.com/traveloka/terraform-aws-autoscaling?ref=v0.3.1"
+  source = "github.com/traveloka/terraform-aws-autoscaling?ref=v0.3.9"
   # ...
   use_mixed_instance_policy = true
 }
