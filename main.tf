@@ -55,7 +55,7 @@ resource "aws_launch_template" "main" {
   ebs_optimized           = var.ebs_optimized
 
   block_device_mappings {
-    device_name = "/dev/sda1"
+    device_name = data.aws_ami.latest_service_image.root_device_name
 
     ebs {
       volume_size           = var.volume_size
