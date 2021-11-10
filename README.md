@@ -117,8 +117,8 @@ The latest stable version of Terraform which this module tested working is Terra
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_asg_name"></a> [asg\_name](#module\_asg\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.20.0 |
-| <a name="module_launch_template_name"></a> [launch\_template\_name](#module\_launch\_template\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.20.0 |
+| <a name="module_asg_name"></a> [asg\_name](#module\_asg\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.21.0 |
+| <a name="module_launch_template_name"></a> [launch\_template\_name](#module\_launch\_template\_name) | github.com/traveloka/terraform-aws-resource-naming.git | v0.21.0 |
 
 ## Resources
 

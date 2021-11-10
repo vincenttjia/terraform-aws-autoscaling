@@ -1,12 +1,12 @@
 module "launch_template_name" {
-  source = "github.com/traveloka/terraform-aws-resource-naming.git?ref=v0.20.0"
+  source = "github.com/traveloka/terraform-aws-resource-naming.git?ref=v0.21.0"
 
   name_prefix   = "${var.service_name}-${var.cluster_role}"
   resource_type = "launch_configuration"
 }
 
 module "asg_name" {
-  source = "github.com/traveloka/terraform-aws-resource-naming.git?ref=v0.20.0"
+  source = "github.com/traveloka/terraform-aws-resource-naming.git?ref=v0.21.0"
 
   name_prefix   = "${var.service_name}-${var.cluster_role}"
   resource_type = "autoscaling_group"
@@ -154,7 +154,7 @@ resource "aws_autoscaling_group" "main" {
   }
 
   tags = concat(
-    list(
+    tolist([
       {
         key                 = "Name"
         value               = module.asg_name.name
@@ -185,7 +185,7 @@ resource "aws_autoscaling_group" "main" {
         value               = "terraform"
         propagate_at_launch = false
       }
-    ),
+    ]),
     var.asg_tags
   )
 
